@@ -1,44 +1,25 @@
-function basicStack(word) {
-  var letters = [];
-  var word = word;
-  var reverseWord = "";
+var Queue = function (){
+    this.length= 0;
+    this.storage = {}
 
-  for (var i = 0; i < word.length; i++) {
-    letters.push(word[i]);
-  }
+    this.enqueue = function (value){
+        this.storage[this.length] = value;
+        this.length ++
+    }
 
-  for (var i = 0; i < word.length; i++) {
-    reverseWord += letters.pop();
-  }
+    this.dequeue = function(){
+        this.length --
+        var result = this.storage[0];
+        delete this.storage[0];
+        return result
+    }
 
-  if (word === reverseWord) {
-    return true;
-  } else {
-    return false;
-  }
+    this.size = function(){
+        return length
+    }
+
+    this.isEmpty = function(){
+        return (this.length === 0)
+    }
+
 }
-
-var Stack = function () {
-  this.length = 0;
-  this.storage = {};
-
-  this.push = function (value) {
-    this.storage[this.length] = value;
-    this.length++;
-  };
-
-  this.pop = function () {
-    this.length--;
-    var result = this.storage[this.length];
-    delete this.storage[this.length];
-    return result;
-  };
-
-  this.size = function () {
-    return this.length;
-  };
-
-  this.peek = function () {
-    return this.storage[this.length - 1];
-  };
-};
