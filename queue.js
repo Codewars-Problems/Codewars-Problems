@@ -15,7 +15,7 @@ var Queue = function () {
   };
 
   this.size = function () {
-    return length;
+    return this.length;
   };
 
   this.isEmpty = function () {
